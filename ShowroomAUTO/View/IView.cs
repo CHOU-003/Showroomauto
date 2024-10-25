@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace ShowroomAUTO.View
 {
     internal interface IView
-    {
+    {    
+            void SetDataToText();
+            void GetDataFromText();
     }
 }
