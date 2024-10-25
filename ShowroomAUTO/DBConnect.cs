@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
-namespace ShowroomAUTO
+namespace DBconnect
 {
     public class SqlConnectionManager
     {
@@ -19,15 +20,17 @@ namespace ShowroomAUTO
             try
             {
                 connection.Open();
-                Console.WriteLine("Kết nối thành công.");
+                MessageBox.Show("Kết nối thành công.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Kết nối thất bại" + ex.Message);
+                MessageBox.Show("Kết nối thất bại: " + ex.Message);
+
             }
 
 
             return connection;
+
         }
 
     }
