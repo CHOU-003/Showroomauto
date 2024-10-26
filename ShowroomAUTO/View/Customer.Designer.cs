@@ -16,11 +16,11 @@ namespace ShowroomAUTO.View
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            txtCustomerID = new TextBox();
+            txtName = new TextBox();
+            txtPhone = new TextBox();
+            txtAddress = new TextBox();
+            txtStatus = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -35,6 +35,8 @@ namespace ShowroomAUTO.View
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
+            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -48,40 +50,40 @@ namespace ShowroomAUTO.View
             label1.TabIndex = 0;
             label1.Text = "Thông tin khách hàng";
             // 
-            // textBox1
+            // txtCustomerID
             // 
-            textBox1.Location = new Point(134, 56);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(199, 27);
-            textBox1.TabIndex = 1;
+            txtCustomerID.Location = new Point(134, 56);
+            txtCustomerID.Name = "txtCustomerID";
+            txtCustomerID.Size = new Size(199, 27);
+            txtCustomerID.TabIndex = 1;
             // 
-            // textBox2
+            // txtName
             // 
-            textBox2.Location = new Point(134, 100);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(199, 27);
-            textBox2.TabIndex = 2;
+            txtName.Location = new Point(134, 100);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(199, 27);
+            txtName.TabIndex = 2;
             // 
-            // textBox3
+            // txtPhone
             // 
-            textBox3.Location = new Point(444, 157);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(199, 27);
-            textBox3.TabIndex = 3;
+            txtPhone.Location = new Point(444, 103);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(199, 27);
+            txtPhone.TabIndex = 3;
             // 
-            // textBox4
+            // txtAddress
             // 
-            textBox4.Location = new Point(444, 103);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(199, 27);
-            textBox4.TabIndex = 4;
+            txtAddress.Location = new Point(134, 157);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(199, 27);
+            txtAddress.TabIndex = 4;
             // 
-            // textBox5
+            // txtStatus
             // 
-            textBox5.Location = new Point(134, 157);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(199, 27);
-            textBox5.TabIndex = 5;
+            txtStatus.Location = new Point(444, 157);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(199, 27);
+            txtStatus.TabIndex = 5;
             // 
             // label2
             // 
@@ -185,6 +187,7 @@ namespace ShowroomAUTO.View
             button1.TabIndex = 12;
             button1.Text = "ADD";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -197,6 +200,7 @@ namespace ShowroomAUTO.View
             button2.TabIndex = 13;
             button2.Text = "Save";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -209,12 +213,33 @@ namespace ShowroomAUTO.View
             button3.TabIndex = 14;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(353, 26);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 29);
+            button4.TabIndex = 15;
+            button4.Text = "Search";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(460, 30);
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "Nhập tên tìm kiếm";
+            textBox6.Size = new Size(183, 27);
+            textBox6.TabIndex = 16;
             // 
             // Customer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox6);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -224,11 +249,11 @@ namespace ShowroomAUTO.View
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtStatus);
+            Controls.Add(txtAddress);
+            Controls.Add(txtPhone);
+            Controls.Add(txtName);
+            Controls.Add(txtCustomerID);
             Controls.Add(label1);
             Name = "Customer";
             Text = "Customer";
@@ -257,5 +282,7 @@ namespace ShowroomAUTO.View
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
+        private TextBox textBox6;
     }
 }

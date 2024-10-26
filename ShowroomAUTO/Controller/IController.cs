@@ -13,5 +13,8 @@ namespace ShowroomAUTO.Controller
         public bool Load();
         public bool Load(Object id);
         public bool IsExist(Object model);
+
+        List<IModel> Search(string name);
+
     }
 }

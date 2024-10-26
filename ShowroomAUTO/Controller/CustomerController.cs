@@ -154,7 +154,7 @@ namespace ShowroomAUTO.Controller
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "UPDATE CUSTOMER SET name = @Name, phone = @Phone, address = @Address WHERE customerID = @CustomerID";
+                    string query = "UPDATE CUSTOMER SET name = @Name, phone = @Phone, address = @Address, status = @Status WHERE customerID = @CustomerID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CustomerID", cus.customerID);
@@ -173,6 +173,43 @@ namespace ShowroomAUTO.Controller
                 return false;
             }
         }
+
+        public List<IModel> Search(string name)
+        {
+            List<IModel> results = new List<IModel>();
+            try
+            {
+                using (SqlConnection connection = _connectionManager.GetConnection())
+                {
+                    string query = "SELECT customerID, name, phone, address, status FROM CUSTOMER WHERE name LIKE @Name";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", "%" + name + "%");
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            CustomerModel model = new CustomerModel
+                            {
+                                customerID = reader["customerID"].ToString(),
+                                name = reader["name"].ToString(),
+                                phone = reader["phone"].ToString(),
+                                address = reader["address"].ToString(),
+                                status = reader["status"].ToString()
+                            };
+                            results.Add(model);
+                        }
+                        reader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in SearchByName: " + ex.Message);
+            }
+            return results;
+        }
+
 
         public bool IsExist(object customerID)
         {

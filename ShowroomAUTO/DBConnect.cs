@@ -20,11 +20,11 @@ namespace DBconnect
             try
             {
                 connection.Open();
-                MessageBox.Show("Kết nối thành công.");
+                Console.WriteLine("Kết nối thành công.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kết nối thất bại: " + ex.Message);
+                Console.WriteLine("Kết nối thất bại: " + ex.Message);
 
             }
 
