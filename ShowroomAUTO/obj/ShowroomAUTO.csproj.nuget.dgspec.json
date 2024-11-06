@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj": {}
+    "C:\\Users\\Admin\\source\\repos\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj": {}
   },
   "projects": {
-    "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj": {
+    "C:\\Users\\Admin\\source\\repos\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj",
         "projectName": "ShowroomAUTO",
-        "projectPath": "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj",
-        "packagesPath": "C:\\Users\\DINH CHAU\\.nuget\\packages\\",
-        "outputPath": "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\Showroomauto\\ShowroomAUTO\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DINH CHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,11 +39,22 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

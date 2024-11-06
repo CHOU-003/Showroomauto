@@ -8,5 +8,9 @@ namespace ShowroomAUTO.Model
 {
     internal interface IModel
     {
+        internal interface IModel
+        {
+            bool IsValidate();
+        }
     }
 }

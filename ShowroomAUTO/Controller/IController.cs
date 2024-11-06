@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShowroomAUTO.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,15 @@ namespace ShowroomAUTO.Controller
 {
     internal interface IController
     {
+        List<IModel> Items { get; }
+        public bool Create(IModel model);
+        public bool Update(IModel model);
+        public bool Delete(IModel id);
+        public IModel Read(Object id);
+        public bool Load();
+        public bool Load(Object id);
+        public bool IsExist(Object model);
+
+        List<IModel> Search(string name);
     }
 }
