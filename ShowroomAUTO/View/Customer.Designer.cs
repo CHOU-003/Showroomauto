@@ -178,38 +178,39 @@ namespace ShowroomAUTO.View
             // 
             // button1
             // 
-            button1.BackColor = Color.Blue;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.BackColor = Color.FromArgb(0, 192, 192);
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(28, 191);
+            button1.Location = new Point(241, 444);
             button1.Name = "button1";
             button1.Size = new Size(92, 41);
             button1.TabIndex = 12;
-            button1.Text = "ADD";
+            button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(0, 192, 192);
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(241, 191);
+            button2.BackColor = Color.White;
+            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.Location = new Point(476, 449);
             button2.Name = "button2";
-            button2.Size = new Size(92, 41);
+            button2.Size = new Size(92, 33);
             button2.TabIndex = 13;
-            button2.Text = "Save";
+            button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.BackColor = Color.Red;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(548, 191);
+            button3.BackColor = Color.White;
+            button3.FlatAppearance.BorderSize = 8;
+            button3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ActiveCaptionText;
+            button3.Location = new Point(590, 449);
             button3.Name = "button3";
-            button3.Size = new Size(95, 41);
+            button3.Size = new Size(99, 33);
             button3.TabIndex = 14;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
@@ -237,7 +238,7 @@ namespace ShowroomAUTO.View
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 489);
             Controls.Add(textBox6);
             Controls.Add(button4);
             Controls.Add(button3);

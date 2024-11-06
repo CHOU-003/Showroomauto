@@ -10,7 +10,7 @@ namespace DBconnect
 
         public SqlConnectionManager()
         {
-            connectionString = "Data Source=LAPTOP-3O5S38SK\\DINHCHAU;User ID=AutoUser;Password=showroom;Initial Catalog=Showroomauto;";
+            connectionString = "Server=LAPTOP-3O5S38SK\\DINHCHAU;User ID=AutoUser;Password=showroom;Initial Catalog=Showroomauto;";
 
         }
 

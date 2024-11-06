@@ -11,11 +11,16 @@ namespace ShowroomAUTO
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Customer customer = new Customer();
+            Customer customer = new Customer();
 
             customer.Show();
 
             this.Hide();
+        }
+
+        private void Test_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

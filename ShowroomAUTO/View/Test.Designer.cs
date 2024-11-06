@@ -36,7 +36,7 @@
             button2.BackColor = SystemColors.ActiveCaption;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(255, 83);
+            button2.Location = new Point(266, 172);
             button2.Name = "button2";
             button2.Size = new Size(118, 59);
             button2.TabIndex = 0;
@@ -52,6 +52,7 @@
             Controls.Add(button2);
             Name = "Test";
             Text = "Form1";
+            Load += Test_Load;
             ResumeLayout(false);
         }
 
