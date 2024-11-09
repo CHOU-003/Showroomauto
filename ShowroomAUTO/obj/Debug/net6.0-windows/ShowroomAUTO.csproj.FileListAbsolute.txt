@@ -50,3 +50,4 @@ D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\refint\S
 D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.pdb
 D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.genruntimeconfig.cache
 D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ref\ShowroomAUTO.dll
+D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Login.resources
