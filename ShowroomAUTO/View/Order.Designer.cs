@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            comboBoxStatus = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             textBoxCar = new TextBox();
             textBoxEmployee = new TextBox();
@@ -41,7 +42,6 @@
             buttonFind = new Button();
             buttonUpdate = new Button();
             buttonDelete = new Button();
-            buttonSave = new Button();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -49,6 +49,7 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -56,6 +57,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(comboBoxStatus);
             panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(textBoxCar);
             panel1.Controls.Add(textBoxEmployee);
@@ -70,16 +72,24 @@
             panel1.Size = new Size(911, 209);
             panel1.TabIndex = 0;
             // 
+            // comboBoxStatus
+            // 
+            comboBoxStatus.FormattingEnabled = true;
+            comboBoxStatus.Location = new Point(670, 106);
+            comboBoxStatus.Name = "comboBoxStatus";
+            comboBoxStatus.Size = new Size(151, 28);
+            comboBoxStatus.TabIndex = 18;
+            // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(375, 104);
+            dateTimePicker1.Location = new Point(375, 107);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 17;
             // 
             // textBoxCar
             // 
-            textBoxCar.Location = new Point(375, 57);
+            textBoxCar.Location = new Point(375, 154);
             textBoxCar.Name = "textBoxCar";
             textBoxCar.PlaceholderText = "ID Xe";
             textBoxCar.Size = new Size(125, 27);
@@ -105,13 +115,13 @@
             // 
             textBoxFind.Location = new Point(670, 57);
             textBoxFind.Name = "textBoxFind";
-            textBoxFind.PlaceholderText = "Tìm kiếm";
-            textBoxFind.Size = new Size(125, 27);
+            textBoxFind.PlaceholderText = "Tìm kiếm ID Khách hàng";
+            textBoxFind.Size = new Size(175, 27);
             textBoxFind.TabIndex = 13;
             // 
             // textBoxValue
             // 
-            textBoxValue.Location = new Point(375, 154);
+            textBoxValue.Location = new Point(375, 57);
             textBoxValue.Name = "textBoxValue";
             textBoxValue.PlaceholderText = "Gía Bán";
             textBoxValue.Size = new Size(125, 27);
@@ -140,7 +150,6 @@
             panel2.Controls.Add(buttonFind);
             panel2.Controls.Add(buttonUpdate);
             panel2.Controls.Add(buttonDelete);
-            panel2.Controls.Add(buttonSave);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 453);
             panel2.Name = "panel2";
@@ -177,20 +186,10 @@
             buttonDelete.UseVisualStyleBackColor = true;
             buttonDelete.Click += buttonDelete_Click;
             // 
-            // buttonSave
-            // 
-            buttonSave.Location = new Point(437, 12);
-            buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(94, 29);
-            buttonSave.TabIndex = 4;
-            buttonSave.Text = "Save";
-            buttonSave.UseVisualStyleBackColor = true;
-            buttonSave.Click += buttonSave_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 209);
             dataGridView1.Name = "dataGridView1";
@@ -240,7 +239,14 @@
             Column6.HeaderText = "Giá Bán";
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
-            Column6.Width = 125;
+            Column6.Width = 140;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Trạng thái";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.Width = 125;
             // 
             // Order
             // 
@@ -271,16 +277,17 @@
         private Button buttonFind;
         private Button buttonUpdate;
         private Button buttonDelete;
-        private Button buttonSave;
         private DataGridView dataGridView1;
         private TextBox textBoxCar;
         private TextBox textBoxEmployee;
         private DateTimePicker dateTimePicker1;
+        private ComboBox comboBoxStatus;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
     }
 }

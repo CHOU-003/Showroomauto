@@ -1,11 +1,15 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
+
 
 namespace DBConnect
+
 {
     public class SqlConnectionManager
     {
@@ -13,7 +17,10 @@ namespace DBConnect
 
         public SqlConnectionManager()
         {
-            connectionString = "Data Source=WINDOWS-DMT5G0O;User ID=qui;Password=qui;Initial Catalog=Showroomauto;";
+
+            connectionString = "Data Source=WINDOWS-DMT5G0O;User ID=test;Password=1234;Initial Catalog=Showroomauto;";
+
+            
 
         }
 

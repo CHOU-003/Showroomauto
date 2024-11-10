@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+<<<<<<< HEAD
+    <Compile Update="View\Car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Order.cs">
+=======
+    <Compile Update="View\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Test.cs">
+>>>>>>> e403fd64979e6e779c316fc14ea00fd8a637fe20
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

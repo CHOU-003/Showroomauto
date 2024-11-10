@@ -10,6 +10,7 @@ namespace ShowroomAUTO.View
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            comboBoxColor = new ComboBox();
             textBoxModel = new TextBox();
             textBoxFind = new TextBox();
             comboBoxStatus = new ComboBox();
@@ -28,6 +29,7 @@ namespace ShowroomAUTO.View
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -35,6 +37,7 @@ namespace ShowroomAUTO.View
             // 
             // panel1
             // 
+            panel1.Controls.Add(comboBoxColor);
             panel1.Controls.Add(textBoxModel);
             panel1.Controls.Add(textBoxFind);
             panel1.Controls.Add(comboBoxStatus);
@@ -48,9 +51,18 @@ namespace ShowroomAUTO.View
             panel1.Size = new Size(800, 209);
             panel1.TabIndex = 0;
             // 
+            // comboBoxColor
+            // 
+            comboBoxColor.FormattingEnabled = true;
+            comboBoxColor.Items.AddRange(new object[] { "Đỏ", "Xanh", "Dương", "Cam", "Vàng", "Trắng", "Đen", "Xám" });
+            comboBoxColor.Location = new Point(313, 100);
+            comboBoxColor.Name = "comboBoxColor";
+            comboBoxColor.Size = new Size(151, 28);
+            comboBoxColor.TabIndex = 8;
+            // 
             // textBoxModel
             // 
-            textBoxModel.Location = new Point(81, 148);
+            textBoxModel.Location = new Point(81, 151);
             textBoxModel.Name = "textBoxModel";
             textBoxModel.PlaceholderText = "Model";
             textBoxModel.Size = new Size(125, 27);
@@ -163,7 +175,7 @@ namespace ShowroomAUTO.View
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 209);
             dataGridView1.Name = "dataGridView1";
@@ -212,6 +224,13 @@ namespace ShowroomAUTO.View
             Column5.SortMode = DataGridViewColumnSortMode.NotSortable;
             Column5.Width = 125;
             // 
+            // Column6
+            // 
+            Column6.HeaderText = "Color";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 125;
+            // 
             // Car
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -242,11 +261,13 @@ namespace ShowroomAUTO.View
         private Button buttonDelete;
         private Button buttonSave;
         private DataGridView dataGridView1;
+        private Button buttonFind;
+        private ComboBox comboBoxColor;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private Button buttonFind;
+        private DataGridViewTextBoxColumn Column6;
     }
 }

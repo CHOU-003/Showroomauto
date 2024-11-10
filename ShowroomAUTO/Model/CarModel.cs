@@ -17,16 +17,22 @@ namespace ShowroomAUTO.Model
 
         public string status { get; set; }
 
+        public string color { get; set; }
+
         public bool IsValidate()
         {
-            if (string.IsNullOrWhiteSpace(carID) || string.IsNullOrWhiteSpace(brand) || string.IsNullOrWhiteSpace(model)
-                || string.IsNullOrWhiteSpace(price) || string.IsNullOrWhiteSpace(status))
+            if (string.IsNullOrWhiteSpace(carID)
+                || string.IsNullOrWhiteSpace(brand)
+                || string.IsNullOrWhiteSpace(model)
+                || string.IsNullOrWhiteSpace(price)
+                || string.IsNullOrWhiteSpace(status)
+                || string.IsNullOrWhiteSpace(color))
             {
                 return false;
             }
 
             return true;
-
         }
+
     }
 }

@@ -14,16 +14,18 @@ using System.Windows.Forms.VisualStyles;
 
 namespace ShowroomAUTO.View
 {
-    public partial class Order : Form , IView
+    public partial class Order : Form, IView
     {
         private OrderController controller;
         private OrderModel order;
+      
         public Order()
         {
             InitializeComponent();
             controller = new OrderController();
             order = new OrderModel();
-
+            comboBoxStatus.Items.AddRange(new string[] { "Đang xử lý", "Hoàn tất" });
+            comboBoxStatus.SelectedIndex = 0; // Mặc định là "Đang xử lý"
             this.Load += new EventHandler(OrderView_Load);
         }
 
@@ -48,7 +50,7 @@ namespace ShowroomAUTO.View
                         foreach (var Order in controller.Items)
                         {
                             OrderModel order = (OrderModel)Order;
-                            dataGridView1.Rows.Add(order.orderID, order.customer_id, order.car_id, order.employee_id, order.orderDate, order.value);
+                            dataGridView1.Rows.Add(order.orderID, order.customer_id, order.car_id, order.employee_id, order.orderDate, order.value, order.status);
                         }
                     }
                     else
@@ -66,6 +68,10 @@ namespace ShowroomAUTO.View
                 // Hiển thị thông báo lỗi chi tiết nếu có ngoại lệ
                 MessageBox.Show("Đã xảy ra lỗi khi tải danh sách hàng: " + ex.Message);
             }
+
+            //comboBoxXe.DataSource = dataGridView1;
+            ////comboBoxXe.DisplayMember = "carID";
+            //comboBoxXe.ValueMember = "carID";
         }
 
 
@@ -76,7 +82,10 @@ namespace ShowroomAUTO.View
             order.car_id = textBoxCar.Text;               // Sử dụng textBoxCarID cho car_id
             order.employee_id = textBoxEmployee.Text;     // Sử dụng textBoxEmployeeID cho employee_id
             order.orderDate = dateTimePicker1.Value; // Sử dụng dateTimePickerOrderDate cho orderDate
-            order.value = decimal.TryParse(textBoxValue.Text, out decimal parsedValue) ? parsedValue : 0;  // Sử dụng textBoxValue cho value, với kiểm tra chuyển đổi
+            order.value = decimal.TryParse(textBoxValue.Text, out decimal parsedValue) ? parsedValue : 0;
+            // Sử dụng textBoxValue cho value, với kiểm tra chuyển đổi
+
+            order.status = comboBoxStatus.SelectedItem?.ToString();
         }
 
 
@@ -88,15 +97,20 @@ namespace ShowroomAUTO.View
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
                 // Gán giá trị từ các cột của hàng vào các TextBox và các điều khiển khác tương ứng
-                textBoxID.Text = row.Cells["orderID"].Value?.ToString();           // orderID
-                textBoxCustomer.Text = row.Cells["customer_id"].Value?.ToString();    // customer_id
-                textBoxCar.Text = row.Cells["car_id"].Value?.ToString();              // car_id
-                textBoxEmployee.Text = row.Cells["employee_id"].Value?.ToString();    // employee_id
-                dateTimePicker1.Value = row.Cells["orderDate"].Value != null
-                    ? Convert.ToDateTime(row.Cells["orderDate"].Value)
+                textBoxID.Text = row.Cells[0].Value?.ToString();           // orderID
+                textBoxCustomer.Text = row.Cells[1].Value?.ToString();    // customer_id
+                textBoxCar.Text = row.Cells[2].Value?.ToString();              // car_id
+                textBoxEmployee.Text = row.Cells[3].Value?.ToString();    // employee_id
+                dateTimePicker1.Value = row.Cells[4].Value != null
+                    ? Convert.ToDateTime(row.Cells[4].Value)
                     : DateTime.Now;                                                     // orderDate
-                textBoxValue.Text = row.Cells["value"].Value?.ToString();               // value
+                textBoxValue.Text = row.Cells[5].Value?.ToString();
+
+                comboBoxStatus.SelectedItem = row.Cells[6].Value?.ToString();// value
+                                                                             // price
+                //comboBoxStatus.Text = row.Cells[6].Value?.ToString();
             }
+
         }
 
 
@@ -108,7 +122,7 @@ namespace ShowroomAUTO.View
             dataGridView1.Rows.Clear();
             foreach (OrderModel model in results)
             {
-                dataGridView1.Rows.Add(order.orderID, order.customer_id, order.car_id, order.employee_id, order.orderDate, order.value);
+                dataGridView1.Rows.Add(model.orderID, model.customer_id, model.car_id, model.employee_id, model.orderDate, model.value, model.status);
             }
         }
 
@@ -125,11 +139,14 @@ namespace ShowroomAUTO.View
             if (controller.IsExist(order.orderID))
             {
                 controller.Update(order);
-
             }
             else
             {
-                controller.Create(order);
+                bool isCreated = controller.Create(order);
+                if (!isCreated)
+                {
+                    MessageBox.Show("Không thể tạo dữ liệu mới. Vui lòng kiểm tra kết nối hoặc dữ liệu đầu vào.");
+                }
             }
 
             LoadOrderList();
@@ -141,30 +158,30 @@ namespace ShowroomAUTO.View
 
             if (string.IsNullOrEmpty(orderID))
             {
-                MessageBox.Show("Vui lòng chọn một nhân viên để xóa!");
+                MessageBox.Show("Vui lòng chọn một đơn hàng để xóa!");
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa đơn hàng này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 // Kiểm tra xem ID có tồn tại trong cơ sở dữ liệu không
                 if (controller.IsExist(orderID))
                 {
-                    order.orderID = orderID;
-                    if (controller.Delete(order))   
+                    order.orderID = orderID; // Cập nhật orderID vào đối tượng order
+                    if (controller.Delete(order))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại!");
+                        MessageBox.Show("Xóa thất bại. Vui lòng kiểm tra kết nối hoặc dữ liệu đầu vào.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhân viên với ID này!");
+                    MessageBox.Show("Không tìm thấy đơn hàng với ID này!");
                 }
 
                 LoadOrderList();
@@ -194,7 +211,7 @@ namespace ShowroomAUTO.View
             }
             else
             {
-                MessageBox.Show("Không tìm thấy nhân viên với ID này!");
+                MessageBox.Show("Không tìm thấy id h!");
             }
 
             LoadOrderList();
@@ -211,7 +228,8 @@ namespace ShowroomAUTO.View
             {
                 order.value = decimal.Parse(value);
             }
-            else { 
+            else
+            {
                 order.value = 0;
             }
         }
@@ -223,5 +241,7 @@ namespace ShowroomAUTO.View
             textBoxEmployee.Text = order.customer_id;
             textBoxValue.Text = order.value.ToString();
         }
+
+       
     }
 }

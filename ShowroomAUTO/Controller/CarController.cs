@@ -31,13 +31,14 @@ namespace ShowroomAUTO.Controllers
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "insert into CAR (carID,brand,model,price,status) Values (@CarID, @Brand, @Model, @Price, @Status)";
+                    string query = "insert into CAR (carID,brand,model,price,status, color) Values (@CarID, @Brand, @Model, @Price, @Status, @Color)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@CarID", crm.carID);
                     command.Parameters.AddWithValue("@Brand", crm.brand);
                     command.Parameters.AddWithValue("@Model", crm.model);
                     command.Parameters.AddWithValue("@Price", crm.price);
                     command.Parameters.AddWithValue("@Status", crm.status);
+                    command.Parameters.AddWithValue("@Color", crm.color);
                     command.ExecuteNonQuery();
                 }
                 return true;
@@ -92,7 +93,8 @@ namespace ShowroomAUTO.Controllers
                             brand = reader["Brand"].ToString(),
                             model = reader["Model"].ToString(),
                             price = reader["Price"].ToString(),
-                            status = reader["Status"].ToString()
+                            status = reader["Status"].ToString(),
+                            color = reader["Color"].ToString()
                         };
                         _items.Add(model);
                     }
@@ -118,7 +120,7 @@ namespace ShowroomAUTO.Controllers
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "SELECT * FROM ORDER WHERE orderID = @OrderID";
+                    string query = "SELECT * FROM CAR WHERE carID = @CarID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CarID", id);
@@ -132,7 +134,8 @@ namespace ShowroomAUTO.Controllers
                                 brand = reader["Brand"].ToString(),
                                 model = reader["Model"].ToString(),
                                 price = reader["Price"].ToString(),
-                                status = reader["Status"].ToString()
+                                status = reader["Status"].ToString(),
+                                color = reader["Color"].ToString()
                             };
                             return model;
                         }
@@ -153,7 +156,7 @@ namespace ShowroomAUTO.Controllers
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "UPDATE CAR SET brand = @Brand, model = @Model, price = @Price, status = @Status WHERE carID = @CarID";
+                    string query = "UPDATE CAR SET brand = @Brand, model = @Model, price = @Price, status = @Status, color = @Color WHERE carID = @CarID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CarID", crm.carID);
@@ -161,6 +164,7 @@ namespace ShowroomAUTO.Controllers
                         command.Parameters.AddWithValue("@Model", crm.model);
                         command.Parameters.AddWithValue("@Price", crm.price);
                         command.Parameters.AddWithValue("@Status", crm.status);
+                        command.Parameters.AddWithValue("@Color", crm.color);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -180,7 +184,7 @@ namespace ShowroomAUTO.Controllers
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "SELECT carID, brand, model, price, status FROM CAR WHERE brand LIKE @Brand";
+                    string query = "SELECT carID, brand, model, price, status, color FROM CAR WHERE brand LIKE @Brand";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Brand", "%" + brand + "%");
@@ -194,7 +198,8 @@ namespace ShowroomAUTO.Controllers
                                 brand = reader["Brand"].ToString(),
                                 model = reader["Model"].ToString(),
                                 price = reader["Price"].ToString(),
-                                status = reader["Status"].ToString()
+                                status = reader["Status"].ToString(),
+                                color = reader["Color"].ToString()
                             };
                             results.Add(model);
                         }

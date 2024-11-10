@@ -1,9 +1,11 @@
 ﻿using ShowroomAUTO.Model;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ShowroomAUTO.Controller
 {
@@ -19,5 +21,6 @@ namespace ShowroomAUTO.Controller
         public bool IsExist(Object model);
 
         List<IModel> Search(string name);
+
     }
 }

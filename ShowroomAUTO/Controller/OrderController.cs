@@ -7,6 +7,7 @@ using ShowroomAUTO.Model;
 using DBConnect;
 using System.Data.SqlClient;
 using ShowroomAUTO.Controllers;
+using ShowroomAUTO.View;
 
 namespace ShowroomAUTO.Controller
 {
@@ -15,10 +16,10 @@ namespace ShowroomAUTO.Controller
         private List<IModel> _items;
         private SqlConnectionManager _connectionManager;
         private OrderModel models;
-        
-        //private CustomerController customerController= new CustomerController();
+
+        private CustomerController customerController = new CustomerController();
         private CarController carController = new CarController();
-        //private EmployeeController employeeController = new EmployeeController();
+        private EmployeeController employeeController = new EmployeeController();
 
         public OrderController()
         {
@@ -31,34 +32,39 @@ namespace ShowroomAUTO.Controller
         public bool Create(IModel model)
         {
             OrderModel order = (OrderModel)model;
-            order.orderDate = DateTime.Now;
             try
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    // Câu truy vấn SQL chèn dữ liệu vào bảng ORDER với các trường phù hợp
-                    string query = "INSERT INTO ORDER  ( customer_id, car_id, employee_id, orderDate, value) " +
-                                   "VALUES ( @CustomerID, @CarID, @EmployeeID, @OrderDate, @Value)";
+                   ; // Mở kết nối trước khi thực thi câu lệnh
+
+                    string query = "INSERT INTO [ORDER] (orderID, customer_id, car_id, employee_id, orderDate, value, status) " +
+                                   "VALUES (@OrderID, @Customer_ID, @Car_ID, @Employee_ID, @OrderDate, @Value, @Status)";
 
                     SqlCommand command = new SqlCommand(query, connection);
+                    
+                        command.Parameters.AddWithValue("@OrderID", order.orderID);
+                        command.Parameters.AddWithValue("@Customer_ID", order.customer_id);
+                        command.Parameters.AddWithValue("@Car_ID", order.car_id);
+                        command.Parameters.AddWithValue("@Employee_ID", order.employee_id);
+                        command.Parameters.AddWithValue("@OrderDate", order.orderDate);
+                        command.Parameters.AddWithValue("@Value", order.value);
+                        command.Parameters.AddWithValue("@Status", order.status);
 
-                    // Thêm các tham số và giá trị từ các thuộc tính của order
-                    command.Parameters.AddWithValue("@CustomerID", order.customer_id);
-                    command.Parameters.AddWithValue("@CarID", order.car_id);
-                    command.Parameters.AddWithValue("@EmployeeID", order.employee_id);
-                    command.Parameters.AddWithValue("@OrderDate", order.orderDate);
-                    command.Parameters.AddWithValue("@Value", order.value);
-
-                    command.ExecuteNonQuery(); // Thực thi câu lệnh chèn
+                        command.ExecuteNonQuery(); // Thực thi câu lệnh chèn
+                    
                 }
                 return true;
             }
             catch (Exception ex)
             {
+                // Ghi ra lỗi chi tiết để chẩn đoán
                 Console.WriteLine("Error in Create: " + ex.Message);
                 return false;
             }
         }
+
+
 
 
         public bool Delete(IModel model)
@@ -68,7 +74,7 @@ namespace ShowroomAUTO.Controller
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "DELETE FROM ORDER WHERE orderID = @OrderID";
+                    string query = "DELETE FROM [ORDER] WHERE orderID = @OrderID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@OrderID", order.orderID);
@@ -117,7 +123,9 @@ namespace ShowroomAUTO.Controller
                             // Kiểm tra nếu 'orderDate' là null và chuyển đổi giá trị thích hợp
                             orderDate = reader["orderDate"] != DBNull.Value ? Convert.ToDateTime(reader["orderDate"]) : DateTime.MinValue,
                             // Kiểm tra nếu 'value' là null và gán giá trị mặc định 0
-                            value = reader["value"] != DBNull.Value ? Convert.ToDecimal(reader["value"]) : 0
+                            value = reader["value"] != DBNull.Value ? Convert.ToDecimal(reader["value"]) : 0,
+                            status = reader["status"] != DBNull.Value ? reader["status"].ToString() : "Unknown"
+
                         };
                         _items.Add(model);
                     }
@@ -146,7 +154,7 @@ namespace ShowroomAUTO.Controller
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "SELECT * FROM ORDER WHERE orderID = @OrderID";
+                    string query = "SELECT * FROM [ORDER] WHERE orderID = @OrderID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@OrderID", id);
@@ -161,7 +169,8 @@ namespace ShowroomAUTO.Controller
                                 car_id = reader["Car_id"].ToString(),
                                 employee_id = reader["Employee_id"].ToString(),
                                 orderDate = Convert.ToDateTime(reader["OrderDate"]),
-                                value = Convert.ToDecimal(reader["value"])
+                                value = Convert.ToDecimal(reader["value"]),
+                                status = reader["Status"].ToString(),
                             };
                             return model;
                         }
@@ -177,22 +186,23 @@ namespace ShowroomAUTO.Controller
 
         public bool Update(IModel model)
         {
-            OrderModel odr = (OrderModel)model; // Chuyển đổi model thành OrderModel
+            OrderModel order = (OrderModel)model; // Chuyển đổi model thành OrderModel
             try
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "UPDATE ORDER SET customer_id = @CustomerID, car_id = @CarID, employee_id = @EmployeeID, orderDate = @OrderDate, value = @Value WHERE orderID = @OrderID";
+                    string query = "UPDATE [ORDER] SET customer_id = @CustomerID, car_id = @CarID, employee_id = @EmployeeID, orderDate = @OrderDate, value = @Value, status = @Status WHERE orderID = @OrderID";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Thêm các tham số với giá trị từ các thuộc tính của odr
-                        command.Parameters.AddWithValue("@OrderID", odr.orderID);
-                        command.Parameters.AddWithValue("@CustomerID", odr.customer_id);
-                        command.Parameters.AddWithValue("@CarID", odr.car_id);
-                        command.Parameters.AddWithValue("@EmployeeID", odr.employee_id);
-                        command.Parameters.AddWithValue("@OrderDate", odr.orderDate);
-                        command.Parameters.AddWithValue("@Value", odr.value);
+                        command.Parameters.AddWithValue("@OrderID", order.orderID); 
+                                command.Parameters.AddWithValue("@CustomerID", order.customer_id);
+                        command.Parameters.AddWithValue("@CarID", order.car_id);
+                        command.Parameters.AddWithValue("@EmployeeID", order.employee_id);
+                        command.Parameters.AddWithValue("@OrderDate", order.orderDate);
+                        command.Parameters.AddWithValue("@Value", order.value);
+                        command.Parameters.AddWithValue("@Status", order.status);
 
                         command.ExecuteNonQuery(); // Thực thi câu lệnh cập nhật
                     }
@@ -214,7 +224,7 @@ namespace ShowroomAUTO.Controller
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "SELECT orderID, customer_id, car_id, employee_id, orderDate, value FROM ORDER WHERE customer_id LIKE @CustomerID";
+                    string query = "SELECT orderID, customer_id, car_id, employee_id, orderDate, value, status FROM [ORDER] WHERE customer_id LIKE @CustomerID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CustomerID", "%" + customerID + "%");
@@ -224,12 +234,13 @@ namespace ShowroomAUTO.Controller
                         {
                             OrderModel model = new OrderModel
                             {
-                                orderID = reader["orderID"].ToString(),
-                                customer_id = reader["customer_id"].ToString(),
-                                car_id = reader["car_id"].ToString(),
-                                employee_id = reader["employee_id"].ToString(),
-                                orderDate = Convert.ToDateTime(reader["orderDate"]),
-                                value = Convert.ToDecimal(reader["value"])
+                                orderID = reader["OrderID"].ToString(),
+                                customer_id = reader["Customer_id"].ToString(),
+                                car_id = reader["Car_id"].ToString(),
+                                employee_id = reader["Employee_id"].ToString(),
+                                orderDate = Convert.ToDateTime(reader["OrderDate"]),
+                                value = Convert.ToDecimal(reader["Value"]),
+                                status = reader["Status"].ToString(),
                             };
                             results.Add(model);
                         }
@@ -250,6 +261,7 @@ namespace ShowroomAUTO.Controller
         private DataGridViewTextBoxColumn dataGridView1TextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridView1TextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridView1TextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridView1TextBoxColumn7;
 
         public bool IsExist(object id)
         {
@@ -257,7 +269,7 @@ namespace ShowroomAUTO.Controller
             {
                 using (SqlConnection connection = _connectionManager.GetConnection())
                 {
-                    string query = "SELECT COUNT(*) FROM ORDER WHERE orderID = @OrderID";
+                    string query = "SELECT COUNT(*) FROM [ORDER] WHERE orderID = @OrderID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@OrderID", id.ToString());
                     int count = (int)command.ExecuteScalar();
@@ -282,5 +294,7 @@ namespace ShowroomAUTO.Controller
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

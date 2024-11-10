@@ -45,7 +45,7 @@ namespace ShowroomAUTO.View
                 foreach (var Car in controller.Items)
                 {
                     CarModel car = (CarModel)Car;
-                    dataGridView1.Rows.Add(car.carID, car.brand, car.model, car.price, car.status);
+                    dataGridView1.Rows.Add(car.carID, car.brand, car.model, car.price, car.status, car.color);
                 }
             }
             else
@@ -54,17 +54,18 @@ namespace ShowroomAUTO.View
             }
         }
 
-        //private void GetDataFromTextBoxes()
-        //{
-        //    car.carID = textBoxID.Text;                    // Sử dụng textBoxID cho carID
-        //    car.brand = comboBoxBrand.Text;                // Sử dụng comboBoxBrand cho brand
-        //    car.model = textBoxModel.Text;                 // Sử dụng textBoxModel cho model
-        //    car.price = textBoxPrice.Text;                 // Sử dụng textBoxPrice cho price
-        //    car.status = comboBoxStatus.Text;              // Sử dụng comboBoxStatus cho status
-        //}
+        private void GetDataFromTextBoxes()
+        {
+            car.carID = textBoxID.Text;                    // Sử dụng textBoxID cho carID
+            car.brand = comboBoxBrand.Text;                // Sử dụng comboBoxBrand cho brand
+            car.model = textBoxModel.Text;                 // Sử dụng textBoxModel cho model
+            car.price = textBoxPrice.Text;                 // Sử dụng textBoxPrice cho price
+            car.status = comboBoxStatus.Text;                  // Sử dụng textBoxPrice cho price
+            car.color = comboBoxColor.Text;             // Sử dụng comboBoxStatus cho status
+        }
 
 
-   
+
 
 
 
@@ -72,10 +73,12 @@ namespace ShowroomAUTO.View
         private DataGridViewTextBoxColumn dataGridView1TextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridView1TextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridView1TextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridView1TextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridView1TextBoxColumn6;
 
         private void buttonSave_Click_1(object sender, EventArgs e)
         {
-            GetDataFromText();
+            GetDataFromTextBoxes();
 
             if (!car.IsValidate())
             {
@@ -98,7 +101,7 @@ namespace ShowroomAUTO.View
 
         private void buttonUpdate_Click_1(object sender, EventArgs e)
         {
-            GetDataFromText();
+            GetDataFromTextBoxes();
 
             if (!car.IsValidate())
             {
@@ -173,9 +176,11 @@ namespace ShowroomAUTO.View
                 comboBoxBrand.Text = row.Cells[1].Value?.ToString();         // brand
                 textBoxModel.Text = row.Cells[2].Value?.ToString();          // model
                 textBoxPrice.Text = row.Cells[3].Value?.ToString();          // price
-                comboBoxStatus.Text = row.Cells[4].Value?.ToString();        // status
+                comboBoxStatus.Text = row.Cells[4].Value?.ToString();         // price
+                comboBoxColor.Text = row.Cells[5].Value?.ToString();
+
             }
-            SetDataToText();
+            
         }
 
         private void buttonFind_Click(object sender, EventArgs e)
@@ -186,7 +191,7 @@ namespace ShowroomAUTO.View
             dataGridView1.Rows.Clear();
             foreach (CarModel model in results)
             {
-                dataGridView1.Rows.Add(car.carID, car.brand, car.model, car.price, car.status);
+                dataGridView1.Rows.Add(car.carID, car.brand, car.model, car.price, car.status, car.color);
             }
         }
 
@@ -207,12 +212,18 @@ namespace ShowroomAUTO.View
             {
                 status = this.comboBoxStatus.SelectedItem.ToString();
             }
+            string color = "";
+            if (this.comboBoxColor != null && this.comboBoxColor.SelectedItem != null)
+            {
+                color = this.comboBoxColor.SelectedItem.ToString();
+            }
 
             car.carID = carID;
             car.brand = brand;
             car.status = status;
             car.model = model;
             car.price = price;
+            car.color = color;
         }
 
 
@@ -223,6 +234,7 @@ namespace ShowroomAUTO.View
             textBoxModel.Text = car.model; 
             comboBoxBrand.Text = car.brand;
             comboBoxStatus.Text = car.status;
+            comboBoxColor.Text = car.color;
         }
     }
 }
