@@ -45,7 +45,10 @@
             showroomToolStripMenuItem = new ToolStripMenuItem();
             orderToolStripMenuItem = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
+            maintenanceToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            contactToolStripMenuItem = new ToolStripMenuItem();
+            addressToolStripMenuItem = new ToolStripMenuItem();
             panel4 = new Panel();
             pictureBox6 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -57,8 +60,7 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox10 = new PictureBox();
-            contactToolStripMenuItem = new ToolStripMenuItem();
-            addressToolStripMenuItem = new ToolStripMenuItem();
+            maintenanceRecordToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -171,26 +173,26 @@
             // employeeToolStripMenuItem
             // 
             employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            employeeToolStripMenuItem.Size = new Size(196, 30);
+            employeeToolStripMenuItem.Size = new Size(224, 30);
             employeeToolStripMenuItem.Text = "Employee";
             employeeToolStripMenuItem.Click += employeeToolStripMenuItem_Click;
             // 
             // customerToolStripMenuItem
             // 
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new Size(196, 30);
+            customerToolStripMenuItem.Size = new Size(224, 30);
             customerToolStripMenuItem.Text = "Customer";
             customerToolStripMenuItem.Click += customerToolStripMenuItem_Click;
             // 
             // carToolStripMenuItem
             // 
             carToolStripMenuItem.Name = "carToolStripMenuItem";
-            carToolStripMenuItem.Size = new Size(196, 30);
+            carToolStripMenuItem.Size = new Size(224, 30);
             carToolStripMenuItem.Text = "Car";
             // 
             // showroomToolStripMenuItem
             // 
-            showroomToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { orderToolStripMenuItem, financeToolStripMenuItem });
+            showroomToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { orderToolStripMenuItem, financeToolStripMenuItem, maintenanceToolStripMenuItem, maintenanceRecordToolStripMenuItem });
             showroomToolStripMenuItem.Name = "showroomToolStripMenuItem";
             showroomToolStripMenuItem.Size = new Size(133, 29);
             showroomToolStripMenuItem.Text = "Showroom";
@@ -198,14 +200,21 @@
             // orderToolStripMenuItem
             // 
             orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            orderToolStripMenuItem.Size = new Size(176, 30);
+            orderToolStripMenuItem.Size = new Size(302, 30);
             orderToolStripMenuItem.Text = "Order";
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(176, 30);
+            financeToolStripMenuItem.Size = new Size(302, 30);
             financeToolStripMenuItem.Text = "Finance";
+            // 
+            // maintenanceToolStripMenuItem
+            // 
+            maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
+            maintenanceToolStripMenuItem.Size = new Size(302, 30);
+            maintenanceToolStripMenuItem.Text = "Maintenance";
+            maintenanceToolStripMenuItem.Click += maintenanceToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -213,6 +222,18 @@
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(71, 29);
             helpToolStripMenuItem.Text = "Help";
+            // 
+            // contactToolStripMenuItem
+            // 
+            contactToolStripMenuItem.Name = "contactToolStripMenuItem";
+            contactToolStripMenuItem.Size = new Size(177, 30);
+            contactToolStripMenuItem.Text = "Contact";
+            // 
+            // addressToolStripMenuItem
+            // 
+            addressToolStripMenuItem.Name = "addressToolStripMenuItem";
+            addressToolStripMenuItem.Size = new Size(177, 30);
+            addressToolStripMenuItem.Text = "Address";
             // 
             // panel4
             // 
@@ -351,17 +372,12 @@
             pictureBox10.TabIndex = 8;
             pictureBox10.TabStop = false;
             // 
-            // contactToolStripMenuItem
+            // maintenanceRecordToolStripMenuItem
             // 
-            contactToolStripMenuItem.Name = "contactToolStripMenuItem";
-            contactToolStripMenuItem.Size = new Size(224, 30);
-            contactToolStripMenuItem.Text = "Contact";
-            // 
-            // addressToolStripMenuItem
-            // 
-            addressToolStripMenuItem.Name = "addressToolStripMenuItem";
-            addressToolStripMenuItem.Size = new Size(224, 30);
-            addressToolStripMenuItem.Text = "Address";
+            maintenanceRecordToolStripMenuItem.Name = "maintenanceRecordToolStripMenuItem";
+            maintenanceRecordToolStripMenuItem.Size = new Size(302, 30);
+            maintenanceRecordToolStripMenuItem.Text = "Maintenance Record";
+            maintenanceRecordToolStripMenuItem.Click += maintenanceRecordToolStripMenuItem_Click;
             // 
             // Home
             // 
@@ -434,5 +450,7 @@
         private PictureBox pictureBox6;
         private ToolStripMenuItem contactToolStripMenuItem;
         private ToolStripMenuItem addressToolStripMenuItem;
+        private ToolStripMenuItem maintenanceToolStripMenuItem;
+        private ToolStripMenuItem maintenanceRecordToolStripMenuItem;
     }
 }

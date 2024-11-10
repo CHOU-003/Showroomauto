@@ -84,5 +84,19 @@ namespace ShowroomAUTO
 
             mecYellow.Show();
         }
+
+        private void maintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Maintenance maintenance = new Maintenance();
+
+            maintenance.Show();
+        }
+
+        private void maintenanceRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuBaoDuong phieuBao = new PhieuBaoDuong();
+
+            phieuBao.Show();
+        }
     }
 }
