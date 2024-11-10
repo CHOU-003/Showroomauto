@@ -134,10 +134,10 @@ namespace ShowroomAUTO.View
             // 
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column1 });
-            dataGridView.Location = new Point(12, 238);
+            dataGridView.Location = new Point(28, 217);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(677, 200);
+            dataGridView.Size = new Size(677, 221);
             dataGridView.TabIndex = 11;
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 

@@ -39,83 +39,74 @@ namespace ShowroomAUTO.View
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(35, 22);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(28, 18);
             label1.Name = "label1";
-            label1.Size = new Size(258, 32);
+            label1.Size = new Size(211, 25);
             label1.TabIndex = 0;
             label1.Text = "Thông tin nhân viên";
             // 
             // txtEmployeeID
             // 
-            txtEmployeeID.Location = new Point(168, 70);
-            txtEmployeeID.Margin = new Padding(4);
+            txtEmployeeID.Location = new Point(134, 56);
             txtEmployeeID.Name = "txtEmployeeID";
-            txtEmployeeID.Size = new Size(248, 31);
+            txtEmployeeID.Size = new Size(199, 27);
             txtEmployeeID.TabIndex = 1;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(168, 125);
-            txtUsername.Margin = new Padding(4);
+            txtUsername.Location = new Point(444, 63);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(248, 31);
+            txtUsername.Size = new Size(199, 27);
             txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(168, 196);
-            txtPassword.Margin = new Padding(4);
+            txtPassword.Location = new Point(134, 108);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(248, 31);
+            txtPassword.Size = new Size(199, 27);
             txtPassword.TabIndex = 4;
             // 
             // txtRole
             // 
-            txtRole.Location = new Point(555, 196);
-            txtRole.Margin = new Padding(4);
+            txtRole.Location = new Point(444, 108);
             txtRole.Name = "txtRole";
-            txtRole.Size = new Size(248, 31);
+            txtRole.Size = new Size(199, 27);
             txtRole.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(35, 74);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(28, 59);
             label2.Name = "label2";
-            label2.Size = new Size(108, 25);
+            label2.Size = new Size(90, 20);
             label2.TabIndex = 6;
             label2.Text = "EmployeeID";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(35, 129);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(353, 66);
             label3.Name = "label3";
-            label3.Size = new Size(91, 25);
+            label3.Size = new Size(75, 20);
             label3.TabIndex = 7;
             label3.Text = "Username";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(35, 196);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(28, 108);
             label5.Name = "label5";
-            label5.Size = new Size(87, 25);
+            label5.Size = new Size(70, 20);
             label5.TabIndex = 9;
             label5.Text = "Password";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(471, 196);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(353, 115);
             label6.Name = "label6";
-            label6.Size = new Size(46, 25);
+            label6.Size = new Size(39, 20);
             label6.TabIndex = 10;
             label6.Text = "Role";
             // 
@@ -123,11 +114,10 @@ namespace ShowroomAUTO.View
             // 
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView.Location = new Point(15, 298);
-            dataGridView.Margin = new Padding(4);
+            dataGridView.Location = new Point(74, 227);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(846, 250);
+            dataGridView.Size = new Size(553, 211);
             dataGridView.TabIndex = 11;
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
@@ -161,41 +151,38 @@ namespace ShowroomAUTO.View
             // 
             // button1
             // 
-            button1.BackColor = Color.Blue;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.BackColor = Color.FromArgb(0, 192, 192);
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(35, 239);
-            button1.Margin = new Padding(4);
+            button1.Location = new Point(265, 445);
             button1.Name = "button1";
-            button1.Size = new Size(115, 51);
+            button1.Size = new Size(92, 41);
             button1.TabIndex = 12;
-            button1.Text = "ADD";
+            button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(0, 192, 192);
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(301, 239);
-            button2.Margin = new Padding(4);
+            button2.BackColor = Color.White;
+            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.Location = new Point(434, 448);
             button2.Name = "button2";
-            button2.Size = new Size(115, 51);
+            button2.Size = new Size(92, 34);
             button2.TabIndex = 13;
-            button2.Text = "Save";
+            button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.BackColor = Color.Red;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(685, 239);
-            button3.Margin = new Padding(4);
+            button3.BackColor = Color.WhiteSmoke;
+            button3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ActiveCaptionText;
+            button3.Location = new Point(532, 448);
             button3.Name = "button3";
-            button3.Size = new Size(119, 51);
+            button3.Size = new Size(95, 34);
             button3.TabIndex = 14;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
@@ -203,10 +190,10 @@ namespace ShowroomAUTO.View
             // 
             // button4
             // 
-            button4.Location = new Point(441, 32);
-            button4.Margin = new Padding(4);
+            button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(74, 180);
             button4.Name = "button4";
-            button4.Size = new Size(118, 36);
+            button4.Size = new Size(94, 29);
             button4.TabIndex = 15;
             button4.Text = "Search";
             button4.UseVisualStyleBackColor = true;
@@ -214,18 +201,19 @@ namespace ShowroomAUTO.View
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(575, 38);
-            textBox6.Margin = new Padding(4);
+            textBox6.BorderStyle = BorderStyle.FixedSingle;
+            textBox6.Location = new Point(174, 182);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "Nhập tên tìm kiếm";
-            textBox6.Size = new Size(228, 31);
+            textBox6.Size = new Size(183, 27);
             textBox6.TabIndex = 16;
             // 
             // Employee
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 562);
+            BackColor = SystemColors.ButtonHighlight;
+            ClientSize = new Size(800, 490);
             Controls.Add(textBox6);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -241,7 +229,6 @@ namespace ShowroomAUTO.View
             Controls.Add(txtUsername);
             Controls.Add(txtEmployeeID);
             Controls.Add(label1);
-            Margin = new Padding(4);
             Name = "Employee";
             Text = "Employee";
             Load += Employee_Load;

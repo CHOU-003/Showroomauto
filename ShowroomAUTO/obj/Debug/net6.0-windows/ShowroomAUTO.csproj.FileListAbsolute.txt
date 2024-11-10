@@ -11,7 +11,6 @@ D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\bin\Debug\net6.0-windows\runtimes\unix\lib
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.csproj.AssemblyReference.cache
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Customer.resources
-D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.Test.resources
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.csproj.GenerateResource.cache
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.GeneratedMSBuildEditorConfig.editorconfig
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.AssemblyInfoInputs.cache
@@ -50,3 +49,7 @@ D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\refint\S
 D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.pdb
 D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.genruntimeconfig.cache
 D:\groupdotnet\group\Showroomauto\ShowroomAUTO\obj\Debug\net6.0-windows\ref\ShowroomAUTO.dll
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Employee.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.Home.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.Properties.Resources.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.MecYellow.resources

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\groupdotnet\\group\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj": {}
+    "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj": {}
   },
   "projects": {
-    "D:\\groupdotnet\\group\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj": {
+    "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\groupdotnet\\group\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj",
+        "projectUniqueName": "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj",
         "projectName": "ShowroomAUTO",
-        "projectPath": "D:\\groupdotnet\\group\\Showroomauto\\ShowroomAUTO\\ShowroomAUTO.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\groupdotnet\\group\\Showroomauto\\ShowroomAUTO\\obj\\",
+        "projectPath": "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\ShowroomAUTO.csproj",
+        "packagesPath": "C:\\Users\\DINH CHAU\\.nuget\\packages\\",
+        "outputPath": "D:\\CAPTURES\\ShowroomAUTO\\ShowroomAUTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DINH CHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -70,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
