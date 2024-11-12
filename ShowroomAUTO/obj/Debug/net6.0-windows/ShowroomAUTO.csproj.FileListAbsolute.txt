@@ -28,3 +28,9 @@ D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\refint\ShowroomAU
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.pdb
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.genruntimeconfig.cache
 D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ref\ShowroomAUTO.dll
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Login.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Car.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.DatHang.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Order.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Finance.resources
+D:\CAPTURES\ShowroomAUTO\ShowroomAUTO\obj\Debug\net6.0-windows\ShowroomAUTO.View.Contact.resources

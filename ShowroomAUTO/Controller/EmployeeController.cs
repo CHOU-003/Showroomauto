@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using DBconnect;
+using System.Drawing;
+using ShowroomAUTO.View;
 
 namespace ShowroomAUTO.Controller
 {
@@ -22,7 +24,32 @@ namespace ShowroomAUTO.Controller
 			_items = new List<IModel>();
 			_connectionManager = new SqlConnectionManager();
 		}
-		public bool Create(IModel model)
+
+        public bool Login(string employeeID, string password)
+        {
+            using (SqlConnection connection = _connectionManager.GetConnection())
+            {
+                string query = "SELECT * FROM EMPLOYEE WHERE employeeID = @employeeID AND password = @password";
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public bool Create(IModel model)
         {
             EmployeeModel cus = (EmployeeModel)model;
             try

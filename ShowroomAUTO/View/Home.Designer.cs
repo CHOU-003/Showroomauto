@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             menuStrip1 = new MenuStrip();
             panel1 = new Panel();
+            button2 = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
@@ -46,6 +47,7 @@
             orderToolStripMenuItem = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
             maintenanceToolStripMenuItem = new ToolStripMenuItem();
+            maintenanceRecordToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             contactToolStripMenuItem = new ToolStripMenuItem();
             addressToolStripMenuItem = new ToolStripMenuItem();
@@ -60,7 +62,6 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox10 = new PictureBox();
-            maintenanceRecordToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(255, 224, 192);
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
@@ -99,6 +101,18 @@
             panel1.Size = new Size(800, 63);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint_1;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Font = new Font("Stencil", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(706, 14);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 6;
+            button2.Text = "Logout";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // label1
             // 
@@ -162,6 +176,7 @@
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             logoutToolStripMenuItem.Size = new Size(166, 30);
             logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // systemToolStripMenuItem
             // 
@@ -173,22 +188,23 @@
             // employeeToolStripMenuItem
             // 
             employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            employeeToolStripMenuItem.Size = new Size(224, 30);
+            employeeToolStripMenuItem.Size = new Size(196, 30);
             employeeToolStripMenuItem.Text = "Employee";
             employeeToolStripMenuItem.Click += employeeToolStripMenuItem_Click;
             // 
             // customerToolStripMenuItem
             // 
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new Size(224, 30);
+            customerToolStripMenuItem.Size = new Size(196, 30);
             customerToolStripMenuItem.Text = "Customer";
             customerToolStripMenuItem.Click += customerToolStripMenuItem_Click;
             // 
             // carToolStripMenuItem
             // 
             carToolStripMenuItem.Name = "carToolStripMenuItem";
-            carToolStripMenuItem.Size = new Size(224, 30);
+            carToolStripMenuItem.Size = new Size(196, 30);
             carToolStripMenuItem.Text = "Car";
+            carToolStripMenuItem.Click += carToolStripMenuItem_Click;
             // 
             // showroomToolStripMenuItem
             // 
@@ -202,12 +218,14 @@
             orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             orderToolStripMenuItem.Size = new Size(302, 30);
             orderToolStripMenuItem.Text = "Order";
+            orderToolStripMenuItem.Click += orderToolStripMenuItem_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
             financeToolStripMenuItem.Size = new Size(302, 30);
             financeToolStripMenuItem.Text = "Finance";
+            financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
             // maintenanceToolStripMenuItem
             // 
@@ -215,6 +233,13 @@
             maintenanceToolStripMenuItem.Size = new Size(302, 30);
             maintenanceToolStripMenuItem.Text = "Maintenance";
             maintenanceToolStripMenuItem.Click += maintenanceToolStripMenuItem_Click;
+            // 
+            // maintenanceRecordToolStripMenuItem
+            // 
+            maintenanceRecordToolStripMenuItem.Name = "maintenanceRecordToolStripMenuItem";
+            maintenanceRecordToolStripMenuItem.Size = new Size(302, 30);
+            maintenanceRecordToolStripMenuItem.Text = "Maintenance Record";
+            maintenanceRecordToolStripMenuItem.Click += maintenanceRecordToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -226,13 +251,14 @@
             // contactToolStripMenuItem
             // 
             contactToolStripMenuItem.Name = "contactToolStripMenuItem";
-            contactToolStripMenuItem.Size = new Size(177, 30);
+            contactToolStripMenuItem.Size = new Size(224, 30);
             contactToolStripMenuItem.Text = "Contact";
+            contactToolStripMenuItem.Click += contactToolStripMenuItem_Click;
             // 
             // addressToolStripMenuItem
             // 
             addressToolStripMenuItem.Name = "addressToolStripMenuItem";
-            addressToolStripMenuItem.Size = new Size(177, 30);
+            addressToolStripMenuItem.Size = new Size(224, 30);
             addressToolStripMenuItem.Text = "Address";
             // 
             // panel4
@@ -372,13 +398,6 @@
             pictureBox10.TabIndex = 8;
             pictureBox10.TabStop = false;
             // 
-            // maintenanceRecordToolStripMenuItem
-            // 
-            maintenanceRecordToolStripMenuItem.Name = "maintenanceRecordToolStripMenuItem";
-            maintenanceRecordToolStripMenuItem.Size = new Size(302, 30);
-            maintenanceRecordToolStripMenuItem.Text = "Maintenance Record";
-            maintenanceRecordToolStripMenuItem.Click += maintenanceRecordToolStripMenuItem_Click;
-            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -452,5 +471,6 @@
         private ToolStripMenuItem addressToolStripMenuItem;
         private ToolStripMenuItem maintenanceToolStripMenuItem;
         private ToolStripMenuItem maintenanceRecordToolStripMenuItem;
+        private Button button2;
     }
 }

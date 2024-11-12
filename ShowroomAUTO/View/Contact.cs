@@ -10,18 +10,26 @@ using System.Windows.Forms;
 
 namespace ShowroomAUTO.View
 {
-    public partial class MecYellow : Form
+    public partial class Contact : Form
     {
-        public MecYellow()
+        public Contact()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            DatHang datHang = new DatHang();
 
-            datHang.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

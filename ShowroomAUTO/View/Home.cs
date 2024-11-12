@@ -98,5 +98,51 @@ namespace ShowroomAUTO
 
             phieuBao.Show();
         }
+
+        private void carToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Car car = new Car();
+
+            car.Show();
+        }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+
+            order.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Login login = new Login();
+
+            login.Show();
+        }
+
+        private void financeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Finance finance = new Finance();
+
+            finance.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Login login = new Login();
+
+            login.Show();
+        }
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contact contact = new Contact();
+
+            contact.Show();
+        }
     }
 }
